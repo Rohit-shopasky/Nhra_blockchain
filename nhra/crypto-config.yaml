@@ -1,0 +1,30 @@
+
+OrdererOrgs:
+  - Name: Orderer
+    Domain: example.com
+    Specs:
+      - Hostname: orderer
+
+    
+PeerOrgs:
+  - Name: Nhra
+    Domain: Nhra.example.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+
+  - Name: Hco
+    Domain: Hco.example.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+
+  - Name: Hcp
+    Domain: Hcp.example.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+

@@ -1,0 +1,86 @@
+{
+    "name": "basic-network",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Nhra",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "mychannel": {
+            "orderers": [
+                "orderer.example.com"
+            ],
+            "peers": {
+                "peer0.Nhra.example.com": {},
+                "peer0.Hco.example.com": {},
+                "peer0.Hcp.example.com": {}
+            }
+        }
+    },
+    "organizations": {
+        "Manufacturer": {
+            "mspid": "NhraMSP",
+            "peers": [
+                "peer0.Nhra.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca1.example.com"
+            ]
+        },
+        "Dealer": {
+            "mspid": "HcoMSP",
+            "peers": [
+                "peer0.Hco.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca2.example.com"
+            ]
+        },
+        "Insurance": {
+            "mspid": "HcpMSP",
+            "peers": [
+                "peer0.Hcp.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca3.example.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.example.com": {
+            "url": "grpc://localhost:7050"
+        }
+    },
+    "peers": {
+        "peer0.Nhra.example.com": {
+            "url": "grpc://localhost:7051"
+        },
+        "peer0.Hco.example.com": {
+            "url": "grpc://localhost:7051"
+        },
+        "peer0.Hcp.example.com": {
+            "url": "grpc://localhost:7051"
+        }
+    },
+    "certificateAuthorities": {
+        "ca1.example.com": {
+            "url": "http://localhost:7054",
+            "caName": "ca1.example.com"
+        },
+        "ca2.example.com": {
+            "url": "http://localhost:7054",
+            "caName": "ca2.example.com"
+        },
+        "ca3.example.com": {
+            "url": "http://localhost:7054",
+            "caName": "ca3.example.com"
+        }
+    }
+}
